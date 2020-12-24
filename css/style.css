@@ -119,7 +119,7 @@ a {
   border-top: 3px dashed #82B3D5;
 }
 .hr .line:last-child {
-  padding-left: 2px;
+  margin-left: 2px;
 }
 .hr .downSymbol {
   display: inline-block;
