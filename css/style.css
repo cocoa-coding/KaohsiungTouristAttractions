@@ -88,7 +88,6 @@ a {
 }
 .choiceArea .hotArea li {
   margin: 0 8px;
-  padding: 3px 30px;
   border-radius: 4px;
   color: white;
 }
@@ -105,6 +104,8 @@ a {
   background-color: #559ac8;
 }
 .choiceArea .hotArea li a {
+  display: inline-block;
+  padding: 3px 30px;
   text-decoration: none;
   color: white;
 }
