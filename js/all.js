@@ -48,9 +48,9 @@ function hideListAndClickArea(e){
 }
 
 function clickArea(e){
-  emptyContent()
   if(e.target.nodeName !== "A"){return};
   e.preventDefault();
+  emptyContent()
   area.textContent = e.target.textContent;
 
   for (var i = 0 ; i < data.length ; i++) {

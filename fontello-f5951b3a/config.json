@@ -1,0 +1,30 @@
+{
+  "name": "",
+  "css_prefix_text": "icon-",
+  "css_use_suffix": false,
+  "hinting": true,
+  "units_per_em": 1000,
+  "ascent": 850,
+  "glyphs": [
+    {
+      "uid": "2d6150442079cbda7df64522dc24f482",
+      "css": "down-dir",
+      "code": 59394,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "7780b0b0de646197d19cedd13106842b",
+      "css": "icons_down",
+      "code": 59392,
+      "src": "custom_icons",
+      "selected": true,
+      "svg": {
+        "path": "M90.9 209.1C90.9 272.7 236.4 472.7 418.2 645.5L736.4 954.5 1054.5 618.2C1227.3 427.3 1363.6 236.4 1363.6 181.8 1363.6 127.3 1100 90.9 727.3 90.9 263.6 90.9 90.9 127.3 90.9 209.1Z",
+        "width": 1455
+      },
+      "search": [
+        "icons_down"
+      ]
+    }
+  ]
+}
