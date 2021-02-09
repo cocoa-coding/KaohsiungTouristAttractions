@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/fontello.css">
-    <title>高雄__改vue</title>
+    <title>高雄旅遊資訊</title>
 </head>
 <body>
     <div id="vm" @click.stop="hideList">
@@ -22,8 +22,8 @@
             <ul class="allArea" @click.stop.prevent="showList">
                 <li><a href="#">-- 請選擇行政區 --</a>
                     <ul class="options">
-                        <li v-for="area in allarea">
-                            <a href="#" @click.stop.prevent="clickArea($event)">{{area}}</a>
+                        <li v-for="area in allarea" @click.stop.prevent="clickArea($event)">
+                            <a href="#">{{area}}</a>
                         </li>
                     </ul>   
                 </li>
@@ -32,8 +32,8 @@
             <div class="hotArea"> 
                 <h5>熱門行政區</h5>
                 <ul class="clearfix">
-                    <li class="pull-left" v-for="point in hotArea">
-                        <a href="#" @click.stop.prevent="clickArea($event)">{{point}}</a>
+                    <li class="pull-left" v-for="point in hotArea" @click.stop.prevent="clickArea($event)">
+                        <a href="#">{{point}}</a>
                     </li>
                 </ul>
             </div>

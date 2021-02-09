@@ -35,6 +35,8 @@ new Vue({
       this.$el.querySelector('.options').style.display = "none";
     },
     clickArea(event) {
+      // console.log(event)
+      if (event.target.nodeName !== "A"){return};
       let eTarget = event.target.textContent;
       this.$el.querySelector('.areaContent h4').textContent = eTarget;
       this.$el.querySelector('.choiceArea ul>li>a').textContent = eTarget;
