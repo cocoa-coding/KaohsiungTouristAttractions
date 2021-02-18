@@ -4,11 +4,15 @@ new Vue({
     kaohsiungData: null,
     allarea: [],
     hotArea: ['左營區','三民區','岡山區','甲仙區'],
-
     currentArea: '',
     allItem: true,
+
+    mapArray: null,
+    pageTotalArray : [1],
+    onePageQua : 6,
+    onePageData : []
   },
-  created(){
+  mounted(){
     this.fetchAPI();
   },
   methods: {
@@ -20,12 +24,11 @@ new Vue({
       const self = this;
       xhr.onload = function() {
         self.kaohsiungData = JSON.parse(xhr.responseText).result.records;
-
-        let areName = [];
-        for(let i = 0 ; self.kaohsiungData.length > i ; i++){
-          areName.push(self.kaohsiungData[i].Zone);
-        }
+        let areName = self.kaohsiungData.map(item => item.Zone)
         self.allarea = [...(new Set(areName))];
+        self.mapArray = self.kaohsiungData.map(item => item)
+        self.paginations();
+        self.changePagination(1);
       }
     },
     showList(){
@@ -35,14 +38,52 @@ new Vue({
       this.$el.querySelector('.options').style.display = "none";
     },
     clickArea(event) {
-      // console.log(event)
       if (event.target.nodeName !== "A"){return};
+      this.hideList();
       let eTarget = event.target.textContent;
       this.$el.querySelector('.areaContent h4').textContent = eTarget;
       this.$el.querySelector('.choiceArea ul>li>a').textContent = eTarget;
       this.currentArea = eTarget;
       this.allItem = false;
-      this.hideList();
+
+      this.mapArray = this.kaohsiungData.filter(item => item.Zone == eTarget);
+      this.paginations();
+      this.changePagination(1)
     },
+    paginations(){
+      //to initial
+      this.pageTotalArray = [1];
+
+      //cal all page
+      let pageTotal = Math.ceil( this.mapArray.length / this.onePageQua );
+  
+      //all page push this.pageTotalArray
+      for(let i = 0 ; i < pageTotal-1 ; i++){
+        this.pageTotalArray.push(this.pageTotalArray.length+1)
+      }
+    },
+    changePagination(pageNum){
+      this.onePageData = [];
+      //per page last num
+      let maxNItemNum = pageNum * this.onePageQua;o
+      //per page first num
+      let minItemNum = maxNItemNum - this.onePageQua + 1 ;
+
+      this.mapArray.forEach((item, index) => {
+        //per item num+1
+        let itemNum = index + 1 ;
+        if ( itemNum >= minItemNum && itemNum <= maxNItemNum) {
+          this.onePageData.push(item);
+        }
+      })
+      let pageJsANode = this.$el.querySelectorAll('.pageJs a');
+      for( let i = 0 ; i < pageJsANode.length ; i++){
+        if(i == pageNum-1) {
+          pageJsANode[i].style.color = "red";
+        } else {
+          pageJsANode[i].style.color = "black";
+        }
+      }
+    }
   }
 })  //end of vm

@@ -49,7 +49,7 @@
             <div class="container">
                 <h4>全高雄市景點</h4>
                 <div class="row">
-                    <template  v-for="item in kaohsiungData">
+                    <template  v-for="item in onePageData">
                         <div class="col-sm-6" v-if="item.Zone == currentArea || allItem">
                             <div class="areaImg" :style="{ backgroundImage: 'url(' + item.Picture1 + ')' }">
                                 <p class="attraction">{{item.Name}}</p>
@@ -64,7 +64,14 @@
                         </div>
                     </template>
                 </div>
-            </div>      
+            </div> 
+            <div class="page-css pageJs">
+                <ul class="clearfix">
+                    <li class="pull-left" v-for="page in pageTotalArray">
+                        <a href="#" @click="changePagination(page)">{{page}}</a>
+                    </li>
+                </ul>
+            </div>
         </section>
     
         <div id="footer">

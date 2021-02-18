@@ -130,27 +130,27 @@ a {
   padding-top: 2px;
   padding-bottom: 90px;
 }
-.container {
+.areaContent .container {
   width: 75%;
 }
-h4 {
+.areaContent h4 {
   color: #9f98d4;
   text-align: center;
   font-size: 22px;
   font-weight: 800;
 }
-.row {
+.areaContent .row {
   display: flex;
   flex-wrap: wrap;
 }
-.row > [class*='col-'] {
+.areaContent .row > [class*='col-'] {
   display: flex;
   flex-direction: column;
 }
-.col-sm-6 {
+.areaContent .col-sm-6 {
   padding: 15px 5px;
 }
-.areaImg {
+.areaContent .areaImg {
   position: relative;
   background-size: cover;
   background-position: 0 50%;
@@ -158,48 +158,64 @@ h4 {
   height: 200px;
   color: white;
 }
-.areaImg p {
+.areaContent .areaImg p {
   margin: 0;
 }
-.areaImg .attraction {
+.areaContent .areaImg .attraction {
   position: absolute;
   left: 3%;
   bottom: 10px;
   font-size: 18px;
 }
-.areaImg .area {
+.areaContent .areaImg .area {
   position: absolute;
   right: 3%;
   bottom: 10px;
 }
-.areaInfo {
+.areaContent .areaInfo {
   position: relative;
   background-color: #fff;
 }
-.areaInfo img {
+.areaContent .areaInfo img {
   display: inline-block;
   padding-right: 3px;
   width: 15px;
 }
-.areaInfo p:nth-child(1) {
+.areaContent .areaInfo p:nth-child(1) {
   margin-top: 10px;
 }
-.areaInfo p:not(.ticket) {
+.areaContent .areaInfo p:not(.ticket) {
   padding-left: 3%;
 }
-.areaInfo p:nth-child(4) {
+.areaContent .areaInfo p:nth-child(4) {
   position: absolute;
   left: 78%;
   bottom: 0;
 }
-#footer {
-  position: fixed;
-  bottom: 0;
-  margin: 0 auto;
-  padding: 20px 0;
-  width: 100%;
+.areaContent .page-css {
   text-align: center;
+}
+.areaContent ul {
+  display: inline-block;
+  color: red;
+}
+.areaContent ul li {
+  padding: 0 10px;
+}
+.areaContent ul a {
+  text-decoration: none;
+  color: black;
+}
+.areaContent ul a:hover {
+  color: #edcd70;
+}
+#footer {
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
   background-color: #559ac8;
+  padding: 20px 0;
 }
 #footer p:first-child {
   color: #fff;
