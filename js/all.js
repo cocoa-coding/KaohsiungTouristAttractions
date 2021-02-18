@@ -65,7 +65,7 @@ new Vue({
     changePagination(pageNum){
       this.onePageData = [];
       //per page last num
-      let maxNItemNum = pageNum * this.onePageQua;o
+      let maxNItemNum = pageNum * this.onePageQua;
       //per page first num
       let minItemNum = maxNItemNum - this.onePageQua + 1 ;
 
